@@ -1,28 +1,76 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="cabecalho">
+      <p>Loja De Ingressos</p>
+      <ListaCarrinho/>
+    </div>
+    <ListaIngressos/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ListaCarrinho from './components/ListaCarrinho.vue';
+import ListaIngressos from './components/ListaIngressos.vue';
+
+
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    ListaIngressos,
+    ListaCarrinho
+},
+  methods:{
+
+    }
 }
 </script>
 
 <style>
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+
+}
+
+.cabecalho {
+  background: whitesmoke;
+  height: max-content;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  align-items: center;
+  padding-left: 40px;
+  padding-right: 30px;
+}
+
+.cabecalho p {
+  color: black;
+  font-size: xx-large;
+  font-style: italic;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 300px) {
+  .cabecalho p {
+    font-size: x-large;
+  }
+
+  .cabecalho {
+    gap: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+.cabecalho img {
+  width: 37px;
+  height: 29px;
+  cursor: pointer;
 }
 </style>
